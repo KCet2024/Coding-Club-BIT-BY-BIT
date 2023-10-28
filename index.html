@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="Website" />
+    <meta property="og:site_name" content="BIT BY BIT (CODING CLUB)" />
+    <meta property="og:description" content="SEM 1 │ Dept. OF AI & ML │ Global Academy Of Technology" />
+    <meta property="og:title" content="BIT BY BIT (CODING CLUB)" />
+    <meta name="image" property="og:image" content="https://gat-aiml.vercel.app/contents/bit-by-bit-logo.png" />
+    <title>Coming Soon - Code Theme</title>
+    <style>
+        body {
+            background-image: url('https://static.vecteezy.com/system/resources/previews/009/329/011/non_2x/binary-code-background-digital-binary-data-with-streaming-digital-code-futuristic-cyberspace-concept-of-coding-or-hacker-crypto-data-dark-blue-gradient-background-vector.jpg');
+            background-size: cover;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: rgba(55, 61, 73, 0.8);
+            /* Transparent background color */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin: 100px auto;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        p {
+            font-size: 16px;
+        }
+        .countdown {
+            font-size: 24px;
+        }
+        img {
+            max-width: 200px;
+            background-color: #1f232b;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="contents/bit-by-bit-logo.png" alt="BIT BY BIT LOGO">
+        <h1>Coming Soon</h1>
+        <p>We are working on something awesome. Stay tuned!</p>
+        <div class="countdown" id="countdown">00:00:00</div>
+    </div>
+    <script>
+        const launchDate = new Date('2023-11-12T14:30:00Z').getTime();
+        const countdown = document.getElementById('countdown');
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = launchDate - now;
+            if (timeLeft < 0) {
+                countdown.innerHTML = 'We are live Now !!!';
+            } else {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                countdown.innerHTML = `${days} Days ${hours} Hr ${minutes} Mins ${seconds} Sec`;
+            }
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
